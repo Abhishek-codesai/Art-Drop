@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Drop | Rare Art. Real Deals.</title>
+    <meta name="description" content="Discover and buy rare, exclusive artworks at premium discounts. Custom artworks on demand, senior artist masterclasses, and limited edition prints.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Neon Background Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation Header -->
+    <header class="sticky-nav">
+        <div class="nav-container">
+            <a href="#home" class="logo" id="nav-logo">
+                <span class="logo-text-art">Art</span><span class="logo-text-drop">Drop</span>
+            </a>
+            <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
+            </button>
+            <nav class="nav-links" id="main-nav-links">
+                <a href="#home" class="nav-link active" data-page="home">Home</a>
+                <a href="#shop" class="nav-link" data-page="shop">Shop</a>
+                <a href="#categories" class="nav-link" data-page="categories">Categories</a>
+                <a href="#bestsellers" class="nav-link" data-page="bestsellers">Best Sellers</a>
+                <a href="#ondemand" class="nav-link" data-page="ondemand">Artwork on Demand</a>
+                <a href="#videos" class="nav-link" data-page="videos">Artist Videos</a>
+                <a href="#founder" class="nav-link" data-page="founder">About Founder</a>
+                <a href="#reviews" class="nav-link" data-page="reviews">Reviews</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#cart" class="cart-btn" data-page="cart" aria-label="Shopping Cart">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-badge" id="global-cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Viewport (SPA Content gets injected here) -->
+    <main id="app-viewport">
+        <!-- Renders dynamically from app.js -->
+    </main>
+
+    <!-- Global Quick Preview Modal -->
+    <div id="quick-preview-modal" class="modal-backdrop hidden">
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="close-preview-btn" aria-label="Close Preview">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-body" id="preview-modal-body">
+                <!-- Injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Global Video Modal -->
+    <div id="video-player-modal" class="modal-backdrop hidden">
+        <div class="modal-content video-modal-content glass-card">
+            <button class="modal-close" id="close-video-btn" aria-label="Close Video">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="video-container">
+                <div class="video-aspect-ratio">
+                    <iframe id="modal-video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Global Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Footer -->
+    <footer class="gallery-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <span class="logo-text-art">Art</span><span class="logo-text-drop">Drop</span>
+                </a>
+                <p class="tagline">Where Art Meets Value.</p>
+                <p class="desc">Discover museum-grade digital and physical artworks curated by experts, at unprecedented pricing.</p>
+                <div class="social-icons">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links-group">
+                <h3>Gallery</h3>
+                <a href="#shop">Collection</a>
+                <a href="#bestsellers">Top Drops</a>
+                <a href="#categories">Featured Styles</a>
+                <a href="#ondemand">Custom Commisions</a>
+            </div>
+
+            <div class="footer-links-group">
+                <h3>Experience</h3>
+                <a href="#videos">Artist Workspaces</a>
+                <a href="#founder">About Founder</a>
+                <a href="#reviews">Collector Reviews</a>
+                <a href="#cart">Your Cart</a>
+            </div>
+
+            <div class="footer-links-group">
+                <h3>Assurance</h3>
+                <p>✓ Certificate of Authenticity</p>
+                <p>✓ 100% Insured Delivery</p>
+                <p>✓ Secure Neon Gateway</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Art Drop. All rights reserved. Created for Abhishek Sharma.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

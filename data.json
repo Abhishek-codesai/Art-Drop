@@ -1,0 +1,57 @@
+{
+  "cart": [],
+  "wishlist": [],
+  "reviews": [
+    {
+      "id": "rev-1",
+      "name": "Sarah Jenkins",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80",
+      "title": "Collector & Interior Designer",
+      "rating": 5,
+      "text": "Art Drop has completely changed how I acquire statement pieces for my clients. The neon accents on the Bronze 'Chrono-Shade' are breathtaking. Incredible customer service and fast shipping!",
+      "artworkId": "chrono-shade",
+      "date": "2026-05-14"
+    },
+    {
+      "id": "rev-2",
+      "name": "David Chen",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+      "title": "Tech Entrepreneur",
+      "rating": 5,
+      "text": "I bought 'Neon Waves' as a digital asset for my screen setup, and also got the canvas print. The print quality is incredibly sharp, and the colors under dim lighting are phenomenal.",
+      "artworkId": "neon-waves",
+      "date": "2026-05-28"
+    },
+    {
+      "id": "rev-3",
+      "name": "Amara Okoye",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+      "title": "Fine Art Collector",
+      "rating": 4,
+      "text": "The 'Quantum Echo' by Elena Rostova is stunning. The glow paint highlights under UV light are mesmerizing. Marked down one star only because shipping took an extra day, but it was fully insured.",
+      "artworkId": "quantum-echo",
+      "date": "2026-06-02"
+    },
+    {
+      "id": "rev-4",
+      "name": "Marcus Vane",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+      "title": "Digital Art Enthusiast",
+      "rating": 5,
+      "text": "Luminant Vortex is a masterpiece. The geometric details are spectacular. Highly recommend Art Drop for rare deals on authentic digital art.",
+      "artworkId": "luminant-vortex",
+      "date": "2026-06-12"
+    },
+    {
+      "id": "rev-5",
+      "name": "Clara Dubois",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80",
+      "title": "Gallery Curator",
+      "rating": 5,
+      "text": "Art Drop connects me directly with original ideas and high quality, verified artists. Siddharth Sen's long-exposure prints are exceptional. The pricing here is unbeatable.",
+      "artworkId": "metropolis-noir",
+      "date": "2026-06-18"
+    }
+  ],
+  "commissions": []
+}
