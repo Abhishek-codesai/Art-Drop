@@ -17,7 +17,7 @@ const ARTWORKS = [
         reviews: 24,
         salesCount: 142,
         isBestSeller: true,
-        image: "assets/Neon_waves.png",
+        image: "assets/neon_waves.png",
         description: "A premium fluid simulation capturing digital waves in high-voltage pink and electric blue colors. Captures the harmony between data flow and organic motion.",
         specs: ["Edition of 50", "Certificate of Authenticity Included", "High-Resolution TIF + 24x36 Canvas Print"]
     },
@@ -170,7 +170,7 @@ const ARTWORKS = [
         reviews: 22,
         salesCount: 112,
         isBestSeller: true,
-        image: "https://images.unsplash.com/photo-1554188718-d807d3348252?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=600&q=80",
         description: "A minimalist capture of colored mist floating over still waters. A breathtaking exploration of fog, neon color reflection, and negative space.",
         specs: ["Edition 4 of 50", "Printed with archival pigment inks", "Includes dark aluminum minimalist frame"]
     },
@@ -586,7 +586,7 @@ class Router {
                     <div class="hero-glowing-circle"></div>
                     <!-- Card 1 -->
                     <div class="floating-art-card floating-card-1" onclick="openQuickPreview('neon-waves')">
-                        <img src="assets/Neon_waves.png" alt="Neon Waves">
+                        <img src="assets/neon_waves.png" alt="Neon Waves">
                         <div class="floating-card-info">
                             <h4>Neon Waves</h4>
                             <p>by Kai Vance</p>
