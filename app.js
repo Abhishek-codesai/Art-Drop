@@ -17,7 +17,7 @@ const ARTWORKS = [
         reviews: 24,
         salesCount: 142,
         isBestSeller: true,
-        image: "assets/neon_waves.png",
+        image: "assets/Neon_waves.png",
         description: "A premium fluid simulation capturing digital waves in high-voltage pink and electric blue colors. Captures the harmony between data flow and organic motion.",
         specs: ["Edition of 50", "Certificate of Authenticity Included", "High-Resolution TIF + 24x36 Canvas Print"]
     },
@@ -334,7 +334,7 @@ class StateManager {
             medium: "canvas",
             complexity: "detailed"
         };
-        this.backendUrl = "http://localhost:3000/api";
+        this.backendUrl = "https://script.google.com/macros/s/AKfycby3ef9dT3stSQRZKM3z6kEKjuXIieaP8vwOrTV7wCDT3KLxNyThXUiAb9L8QzxrIv6u/exec";
     }
 
     async init() {
@@ -586,7 +586,7 @@ class Router {
                     <div class="hero-glowing-circle"></div>
                     <!-- Card 1 -->
                     <div class="floating-art-card floating-card-1" onclick="openQuickPreview('neon-waves')">
-                        <img src="assets/neon_waves.png" alt="Neon Waves">
+                        <img src="assets/Neon_waves.png" alt="Neon Waves">
                         <div class="floating-card-info">
                             <h4>Neon Waves</h4>
                             <p>by Kai Vance</p>
@@ -1077,7 +1077,7 @@ class Router {
                 <div class="founder-visuals">
                     <div class="founder-glow-backing"></div>
                     <div class="founder-img-wrapper">
-                        <img src="assets/founder.png" alt="Abhishek Sharma - Founder">
+                        <img src="assets/Founder.png" alt="Abhishek Sharma - Founder">
                     </div>
                 </div>
                 <div class="founder-info">
@@ -1737,29 +1737,74 @@ function removeFromCart(artworkId) {
 }
 
 function simulateCheckout() {
-    showToast("Processing payment gateway...", "success");
-    setTimeout(() => {
-        State.clearCart();
-        const viewport = document.getElementById("app-viewport");
-        viewport.innerHTML = `
-            <div class="page-section success-card glass-card" style="border-color: var(--hot-pink); box-shadow: var(--glow-pink);">
-                <div class="success-icon" style="background: rgba(255, 0, 127, 0.1); color: var(--hot-pink);">
-                    <i data-lucide="heart" size="48" fill="currentColor"></i>
+    if (State.cart.length === 0) {
+        showToast("Your cart is empty!", "pink");
+        return;
+    }
+
+    showToast("Processing order and saving to Google Sheets...", "success");
+
+    // Calculate total price and compile artwork titles
+    let totalPrice = 0;
+    let artworkTitles = [];
+    let totalQuantity = 0;
+    
+    State.cart.forEach(item => {
+        const art = ARTWORKS.find(a => a.id === item.artworkId);
+        if (art) {
+            totalPrice += art.price * item.quantity;
+            artworkTitles.push(art.title + " (x" + item.quantity + ")");
+            totalQuantity += item.quantity;
+        }
+    });
+
+    const orderData = {
+        customerName: "Guest User", // You can later add a form to collect real details
+        email: "guest@example.com",
+        phone: "N/A",
+        artworkTitle: artworkTitles.join(", "),
+        quantity: totalQuantity,
+        totalPrice: totalPrice,
+        paymentMethod: "Simulated Checkout",
+        orderDate: new Date().toISOString(),
+        status: "Pending"
+    };
+
+    // Send the POST request to the Google Sheets Web App URL
+    fetch(State.backendUrl, {
+        method: "POST",
+        body: JSON.stringify(orderData),
+        headers: {
+            "Content-Type": "text/plain;charset=utf-8" // Crucial to avoid CORS preflight
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === "success") {
+            State.clearCart();
+            const viewport = document.getElementById("app-viewport");
+            viewport.innerHTML = `
+                <div class="page-section success-card glass-card" style="border-color: var(--hot-pink); box-shadow: var(--glow-pink);">
+                    <div class="success-icon" style="background: rgba(255, 0, 127, 0.1); color: var(--hot-pink);">
+                        <i data-lucide="check-circle" size="48" fill="currentColor"></i>
+                    </div>
+                    <h2 class="glow-text-pink">Order Placed!</h2>
+                    <p>Thank you! Your order has been successfully saved to your Google Sheet.</p>
+                    <div class="order-id-box" style="border-color: var(--hot-pink);">
+                        Receipt Code: <span class="glow-text-blue">PAY-${Math.floor(100000 + Math.random()*900000)}</span>
+                    </div>
+                    <a href="#shop" class="btn btn-primary">Discover More Drops</a>
                 </div>
-                <h2 class="glow-text-pink">Collection Confirmed!</h2>
-                <p>Thank you for purchasing rare pieces with Art Drop. Your payment has cleared successfully.</p>
-                <div class="order-id-box" style="border-color: var(--hot-pink);">
-                    Receipt Code: <span class="glow-text-blue">PAY-${Math.floor(100000 + Math.random()*900000)}</span>
-                </div>
-                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 24px;">
-                    We are packaging your frames with museum-grade bubble wrap layers. Insured tracking emails will land in your box within 12 hours.
-                </p>
-                <a href="#shop" class="btn btn-primary">Discover More Drops</a>
-            </div>
-        `;
-        lucide.createIcons();
-        showToast("Order Placed Successfully!", "success");
-    }, 1500);
+            `;
+            lucide.createIcons();
+        } else {
+            showToast("Error saving order: " + data.message, "pink");
+        }
+    })
+    .catch(error => {
+        console.error("Fetch Error:", error);
+        showToast("Could not connect to Google Sheets. Check your Web App URL.", "pink");
+    });
 }
 
 // --- GLOBAL TOAST SYSTEM ---
