@@ -170,7 +170,7 @@ const ARTWORKS = [
         reviews: 22,
         salesCount: 112,
         isBestSeller: true,
-        image: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&q=80",
         description: "A minimalist capture of colored mist floating over still waters. A breathtaking exploration of fog, neon color reflection, and negative space.",
         specs: ["Edition 4 of 50", "Printed with archival pigment inks", "Includes dark aluminum minimalist frame"]
     },
@@ -287,7 +287,7 @@ const ARTIST_VIDEOS = [
         artist: "Marcus Aurel",
         specialty: "Cybernetic Bronze Sculptures",
         thumbnail: "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?auto=format&fit=crop&w=600&q=80",
-        youtubeId: "1s58rW0_hXw",
+        youtubeId: "YQHsXMglC9A",
         bio: "Marcus Aurel integrates cold bronze foundry casting with addressable neon hardware, producing sculptural light sculptures."
     },
     {
@@ -295,7 +295,7 @@ const ARTIST_VIDEOS = [
         artist: "Siddharth Sen",
         specialty: "Long Exposure Neon Photography",
         thumbnail: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80",
-        youtubeId: "S4a0l2v_T1Y",
+        youtubeId: "WpE_xMRiCLE",
         bio: "Siddharth captures transient light in city nights. His prints capture light trails as ribbons of glowing energy."
     },
     {
@@ -303,7 +303,7 @@ const ARTIST_VIDEOS = [
         artist: "Zev Wilde",
         specialty: "Subcultural Street Art",
         thumbnail: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=600&q=80",
-        youtubeId: "y1xI2OInB-M",
+        youtubeId: "mC1V4i78Z4E",
         bio: "Zev Wilde works with mixed media stencils and heavy layering, bringing underground graffiti and neon tag designs to panels."
     },
     {
@@ -311,7 +311,7 @@ const ARTIST_VIDEOS = [
         artist: "Aria Thorne",
         specialty: "Surreal 3D Ceramics",
         thumbnail: "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=600&q=80",
-        youtubeId: "VlYjXwR6Q5I",
+        youtubeId: "LXb3EKWsInQ",
         bio: "Aria merges clay modeling and digital printing. She glazes detailed ceramic busts in shimmering metallic and chrome paints."
     }
 ];
@@ -1077,7 +1077,7 @@ class Router {
                 <div class="founder-visuals">
                     <div class="founder-glow-backing"></div>
                     <div class="founder-img-wrapper">
-                        <img src="assets/Founder.png" alt="Abhishek Sharma - Founder">
+                        <img src="assets/founder.png" alt="Abhishek Sharma - Founder">
                     </div>
                 </div>
                 <div class="founder-info">
@@ -1116,6 +1116,8 @@ class Router {
                 </div>
             </div>
         `;
+        
+        lucide.createIcons();
     }
 
     // 8. CART PAGE
