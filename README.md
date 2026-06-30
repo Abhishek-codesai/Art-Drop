@@ -59,8 +59,7 @@ Open `index.html` in your browser. *(Order submission needs your own Apps Script
 ## 👤 Author
 
 **Abhishek**
-B.Tech CSE (AI/ML) · PCTE Institute of Engineering and Technology
-Building [CodeDrive.ai](#) 🚀
+B.Tech CSE (AI/ML) 🚀
 
 <div align="center">
 
